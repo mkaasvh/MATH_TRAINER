@@ -24,7 +24,7 @@ final class TrainViewController: UIViewController {
     private func configureButtons() {
         buttonsCollection.forEach { button in
             button.layer.shadowColor = UIColor.darkGray.cgColor
-            button.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+            button.layer.shadowOffset = CGSize(width: 0, height: 2)
             button.layer.shadowOpacity = 0.4
             button.layer.shadowRadius = 3
         }
