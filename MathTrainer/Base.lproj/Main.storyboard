@@ -232,6 +232,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addScoreLabel" destination="Ht7-Mq-xuN" id="4m8-AB-rn0"/>
+                        <outlet property="divideScoreLabel" destination="qLT-YB-dVf" id="S0i-mn-bcp"/>
+                        <outlet property="multiplyScoreLabel" destination="n9A-ru-TjT" id="b91-sg-EM2"/>
+                        <outlet property="subtractScoreLabel" destination="AHg-IK-Gao" id="znO-VH-dSV"/>
                         <outletCollection property="buttonsCollection" destination="E1a-8n-hSg" collectionClass="NSMutableArray" id="Mdb-fg-g3b"/>
                         <outletCollection property="buttonsCollection" destination="n55-s9-MLQ" collectionClass="NSMutableArray" id="Soe-Ps-3Iu"/>
                         <outletCollection property="buttonsCollection" destination="Mmu-tS-FfH" collectionClass="NSMutableArray" id="Lv2-Pr-4z5"/>
@@ -241,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-27"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
         <!--Train View Controller-->
         <scene sceneID="1P9-d6-0rR">
@@ -296,6 +300,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KzC-4m-4FL"/>
+                                    <action selector="rightAction:" destination="GQK-cl-llf" eventType="touchUpInside" id="Nkn-40-8R1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plo-Sy-lmA">
@@ -317,8 +322,15 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TyW-b0-vEA"/>
+                                    <action selector="leftAction:" destination="GQK-cl-llf" eventType="touchUpInside" id="ZOf-H6-wwF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-tF-7M4">
+                                <rect key="frame" x="256" y="97" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Mt-uj-D02"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -335,14 +347,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="uw3-UF-4Ni"/>
                     <connections>
-                        <outletCollection property="buttonsCollection" destination="Plo-Sy-lmA" collectionClass="NSMutableArray" id="Fkd-Ut-9cq"/>
-                        <outletCollection property="buttonsCollection" destination="nGs-du-kLW" collectionClass="NSMutableArray" id="hjO-lU-FPO"/>
+                        <outlet property="leftButton" destination="nGs-du-kLW" id="Cls-Zc-PAf"/>
+                        <outlet property="questionLabel" destination="voc-EO-2w0" id="iOk-Gq-Ajh"/>
+                        <outlet property="rightButton" destination="Plo-Sy-lmA" id="y2I-Ya-4Wg"/>
+                        <outlet property="scoreLabel" destination="eSU-tF-7M4" id="FJh-yc-rta"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJa-dw-E2f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="tw8-lD-TRX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="874" y="-27"/>
+            <point key="canvasLocation" x="872.51908396946567" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
@@ -350,7 +364,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

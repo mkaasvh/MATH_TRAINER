@@ -7,12 +7,13 @@
 
 import UIKit
 
-enum MathTypes: Int {
-    case add, subtract, multiply, divide
-}
-
 class ViewController: UIViewController {
     @IBOutlet var buttonsCollection: [UIButton]!
+    
+    @IBOutlet weak var addScoreLabel: UILabel!
+    @IBOutlet weak var subtractScoreLabel: UILabel!
+    @IBOutlet weak var multiplyScoreLabel: UILabel!
+    @IBOutlet weak var divideScoreLabel: UILabel!
     
     private var selectedType: MathTypes = .add
     
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
         configureButtons()
+        configureLabels()
     }
     
     @IBAction func buttonsAction(_ sender: UIButton) {
@@ -27,7 +29,9 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "goToTheNextPage", sender: sender)
     }
     
-    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) { }
+    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
+        configureLabels()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? TrainViewController {
@@ -42,6 +46,13 @@ class ViewController: UIViewController {
             button.layer.shadowOpacity = 0.4
             button.layer.shadowRadius = 3
         }
+    }
+    
+    private func configureLabels() {
+        addScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.add))"
+        subtractScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.subtract))"
+        multiplyScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.multiply))"
+        divideScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.divide))"
     }
 }
 
