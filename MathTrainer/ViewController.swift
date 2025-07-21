@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
-        configureLabels()
+//        configureLabels()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,11 +48,11 @@ class ViewController: UIViewController {
         }
     }
     
-    private func configureLabels() {
-        addScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.add))"
-        subtractScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.subtract))"
-        multiplyScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.multiply))"
-        divideScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.divide))"
-    }
+//    private func configureLabels() {
+//        addScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.add))"
+//        subtractScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.subtract))"
+//        multiplyScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.multiply))"
+//        divideScoreLabel.text = "scores: \(ScoreManager.shared.getScore(.divide))"
+//    }
 }
 

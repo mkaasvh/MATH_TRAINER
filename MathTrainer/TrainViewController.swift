@@ -8,7 +8,7 @@
 import UIKit
 
 final class TrainViewController: UIViewController {
-    @IBOutlet weak var scoreLabel: UILabel!
+   // @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -52,7 +52,7 @@ final class TrainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureScoreLabel(type)
+        //configureScoreLabel(type)
         configureQuestion()
         configureButtons()
     }
@@ -91,38 +91,38 @@ final class TrainViewController: UIViewController {
     }
     
     private func configureQuestion() {
-        if sign == "/" {
-            let result = Int.random(in: 2...12)
-            secondNum = Int.random(in: 2...12)
-            firstNum = result * secondNum
-        } else {
-            firstNum = Int.random(in: 1...99)
-            secondNum = Int.random(in: 1...99)
-        }
+//        if sign == "/" {
+//            let result = Int.random(in: 2...12)
+//            secondNum = Int.random(in: 2...12)
+//            firstNum = result * secondNum
+//        } else {
+//            firstNum = Int.random(in: 1...99)
+//            secondNum = Int.random(in: 1...99)
+//        }
         
         let answer: String = "\(firstNum) \(sign) \(secondNum)"
         questionLabel.text = answer
     }
     
-    private func configureScoreLabel(_ type: MathTypes) {
-        let scoreData = ScoreManager.shared.getScore(type)
-        scoreLabel.text = "Score: \(String(scoreData))"
-    }
+//    private func configureScoreLabel(_ type: MathTypes) {
+//        let scoreData = ScoreManager.shared.getScore(type)
+//        scoreLabel.text = "Score: \(String(scoreData))"
+//    }
     
     private func checkAnswer(_ answer: String, for button: UIButton) {
         let isRightAnswer = Int(answer) == self.answer
         
         button.backgroundColor = isRightAnswer ? .green : .red
         
-        if isRightAnswer {
-            ScoreManager.shared.addPoint(type)
-            self.configureScoreLabel(self.type)
-        }
-            
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            guard let self = self else { return }
-            self.configureQuestion()
-            self.configureButtons()
-        }
+//        if isRightAnswer {
+//            ScoreManager.shared.addPoint(type)
+//            self.configureScoreLabel(self.type)
+//        }
+//            
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+//            guard let self = self else { return }
+//            self.configureQuestion()
+//            self.configureButtons()
+//        }
     }
 }
